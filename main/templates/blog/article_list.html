@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Мой блог</title>
+</head>
+<body>
+    <header>
+        <a href="{% url 'article_create' %}">Написать статью</a>
+    </header>
+    <h1>Список статей</h1>
+    <ul>
+        {% for article in articles %}
+            <li><a href="{% url 'article_detail' article.pk %}">{{ article.title }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

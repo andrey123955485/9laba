@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Написать статью</title>
+</head>
+<body>
+    <header>
+        <a href="{% url 'article_list' %}">назад</a>
+    </header>
+    <h1>Написать статью</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Сохранить</button>
+    </form>
+</body>
+</html>
